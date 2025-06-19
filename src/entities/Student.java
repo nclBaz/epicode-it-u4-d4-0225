@@ -106,8 +106,8 @@ public class Student implements Runner, Jumper {
 
 	@Override
 	public boolean equals(Object o) {
-		if (o == null || getClass() != o.getClass()) return false;
-		Student student = (Student) o;
+		if (o == null || this.getClass() != o.getClass()) return false;
+		Student student = (Student) o; // CASTING ESPLICITO da Object a Student
 		return id == student.id && isFullStack == student.isFullStack && Objects.equals(name, student.name) && Objects.equals(surname, student.surname);
 	}
 
