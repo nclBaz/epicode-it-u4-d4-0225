@@ -1,6 +1,8 @@
 package entities;
 
-public class Dog extends Animal {
+import interfaces.Runner;
+
+public class Dog extends Animal implements Runner {
 	// Dog è FIGLIO di Animal
 	// Significa che ereditiamo tutti gli attributi ed i metodi dal padre
 	// Possiamo però anche aggiungere ulteriori attributi/metodi
@@ -17,6 +19,13 @@ public class Dog extends Animal {
 	public Dog(String name, int age, boolean isACop) { // OVERLOAD DI COSTRUTTORE
 		this(name, age); // Richiamo il primo costruttore per non ripetere codice
 		this.isACop = isACop;
+	}
+
+	@Override
+	public void getInfo() {
+		System.out.println("Il mio nome è: " + this.name);
+		System.out.println("La mia età è: " + this.age);
+		System.out.println("Sono un poliziotto? " + this.isACop);
 	}
 
 	// Lista metodi
@@ -48,5 +57,10 @@ public class Dog extends Animal {
 		return "Dog{" +
 				"isACop=" + isACop +
 				"} " + super.toString();
+	}
+
+	@Override
+	public void run(int km) {
+		System.out.println("Ciao sono un cane e ho corso per " + km + " km");
 	}
 }

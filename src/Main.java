@@ -5,7 +5,7 @@ import entities.Dog;
 public class Main {
 	public static void main(String[] args) {
 
-		Animal a = new Animal("Maurizio", 20);
+		// Animal a = new Animal("Maurizio", 20);
 		//a.sayYourName();
 
 		Dog d = new Dog("Rex", 5, true);
@@ -20,9 +20,6 @@ public class Main {
 		Animal a2 = new Dog("Giorgio", 2, false);
 		a2.sayYourName(); // Qua viene usato l'override del figlio
 		// a2.bark() se sfrutto l'upcasting non potrò usare i metodi specifici del cane
-
-		if (d instanceof Animal) {
-			System.out.println("");
-		}
+		
 	}
 }

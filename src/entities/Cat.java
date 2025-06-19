@@ -1,6 +1,8 @@
 package entities;
 
-public class Cat extends Animal {
+import interfaces.Jumper;
+
+public class Cat extends Animal implements Jumper {
 	// Cat è FIGLIO di Animal
 	// Significa che ereditiamo tutti gli attributi ed i metodi dal padre
 	// Possiamo però anche aggiungere ulteriori attributi/metodi
@@ -19,6 +21,13 @@ public class Cat extends Animal {
 	// Lista metodi
 	public void meow() { // Metodo esclusivo dei Cat
 		System.out.println("MIAO!");
+	}
+
+	@Override
+	public void getInfo() {
+		System.out.println("Il mio nome è: " + this.name);
+		System.out.println("La mia età è: " + this.age);
+		System.out.println("Ho gli stivali? " + this.hasBoots);
 	}
 
 	@Override
@@ -41,5 +50,10 @@ public class Cat extends Animal {
 		return "Cat{" +
 				"hasBoots=" + hasBoots +
 				"} " + super.toString();
+	}
+
+	@Override
+	public void jump(int cm) {
+		System.out.println("Ciao sono un gatto e ora salterò di " + cm + " cm");
 	}
 }
